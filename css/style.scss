@@ -1,0 +1,214 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    ul {
+        margin: 0;
+        list-style: none;
+    }    
+}
+
+.content-wrapper {
+    margin: auto;
+}
+
+.main-navigation {
+    background-color: #373c3f;
+    color: #d7d8d9;    
+    text-transform: uppercase;
+    .pc-navigation-list {
+        display: flex;
+        align-items: center;        
+        li {
+            margin-right: 30px;
+        }
+    }
+}
+
+.free-psd-ad {
+    box-sizing: border-box;
+    padding: 50px;
+    font-size: 1.8em;
+    color: white;
+    background-color: #0b9bb2;
+   span {
+       padding-right: 50px;
+       line-height: 100px;
+   }
+
+}
+.robin-hood-files {
+    display: flex;    
+    div {        
+        &:nth-child(1) {
+            box-sizing: border-box;
+            padding-top: 10%;
+            background-color: #27212c;
+            width: 80%;
+            color: #8c7d9a;
+            text-align: center;
+
+        }
+        &:nth-child(2) {
+            background-color: #bc3183;
+            width: 20%;
+        }
+    }
+}
+
+.photos {
+    .photo-list {        
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            &:first-child {
+                background-color: #5b0fa1;
+            }
+        }
+    }
+}
+
+.articles {
+    h2 {
+        padding-left: 20px;
+        color: #0b9bb2;
+    }
+     .article-wrapper {
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+
+         article { 
+             width: 450px; 
+             margin: 0 20px; 
+             font-weight: 400;
+         }
+     } 
+}
+
+.right-pointer {
+    position: relative;
+    &::before,
+    &::after {
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 30px;
+        height: 10px;
+        border-radius: 3px;
+    }
+    &::before {        
+        transform: rotate(45deg);
+    }
+    &::after {   
+        top: calc(50% + 5px);     
+        transform: rotate(-45deg);
+    }
+}
+
+@media (min-width: 980px) {
+    .content-wrapper {
+        width: 980px; 
+        .pc-navigation-list {            
+            height: 100px;        
+        }
+        .mobile-navigation-list {
+            display: none;
+        }
+        .free-psd-ad {
+            height: 550px;
+        }
+        .robin-hood-files {
+            div {
+                height: 240px;
+            }
+        }
+        .photos {
+            .photo-list { 
+                padding: 0;       
+                li {
+                    width: 326px;
+                    height: 284px;
+                }
+            }
+        }
+    } 
+}
+
+@media (max-width: 979px) {
+    .content-wrapper {
+        width: 640px;
+        .pc-navigation-list {
+            display: none;            
+        }
+        .mobile-navigation-list{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+            li {
+               &:nth-child(2) {
+                   margin-right: 0;
+                   width: 80px;
+                   height: 75px;
+                   background-color: black;
+               } 
+            }
+            .navigation-button {
+                position: relative;
+                left: 25px;
+                top: 30px;
+                background-color: white;
+                width: 30px;
+                height: 5px;
+                &:before,
+                &:after {
+                    position: absolute;
+                    
+                    content: "";
+                    width: 30px;
+                    height: 5px;
+                    background-color: white;
+                }
+                &:before {
+                    top: -10px;
+                }
+                &:after {
+                    top: 10px;
+                }
+
+            }
+        }
+        .free-psd-ad {
+            height: 350px;
+        }
+        .robin-hood-files {
+            div {
+                height: 150px;
+            }
+        }
+        .photos {            
+            .photo-list { 
+                padding: 0;       
+                li {
+                    width: 100%;
+                    height: 550px;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        .articles {
+            h2 {
+                padding-left: 95px;
+            }
+        }
+    }
+
+}
